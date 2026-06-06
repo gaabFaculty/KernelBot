@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+httpx
+python-dotenv
+jinja2
+rank-bm25
+watchdog
+pytest
+PyMySQL
+cryptography
+PyYAML
+jsonschema
+cursor-sdk

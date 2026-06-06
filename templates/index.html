@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kernel — assistente de estudo</title>
+    <meta name="description" content="Kernel: assistente de estudo com busca nas aulas do curso (BM25 + material indexado)." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+</head>
+
+<body>
+    <div class="app">
+
+        <header class="header">
+            <div class="context-pin-badge" id="context-pin-badge" hidden aria-live="polite"></div>
+            <button type="button" class="header-new-chat" id="new-chat-button" title="Limpar histórico e contexto fixado">
+                Nova conversa
+            </button>
+            <div class="header-badge online" id="status-badge">Online</div>
+        </header>
+
+        <main class="chat-box" id="chat" role="log" aria-live="polite" aria-label="Histórico de mensagens">
+            <div class="empty-state" id="empty-state">
+                <div class="empty-state-icon" aria-hidden="true">◉</div>
+                <div class="empty-state-title">Oi, sou o Kernel</div>
+                <p class="empty-state-intro">
+                    Assistente de estudo das <strong>suas aulas</strong> — o que está indexado manda; o resto eu digo
+                    na cara ou marco como extensão, sem inventar material do curso.
+                </p>
+                <p class="empty-state-sub">
+                    Pergunte com disciplina e tema, ou use um prefixo:
+                    <code>/python</code> · <code>/visualizacao-sql</code> · <code>/projeto-bloco</code> ·
+                    <code>/planejamento-curso-carreira</code> · <code>/doc</code> · <code>/content</code>
+                </p>
+                <div class="cmd-pills">
+                    <span class="cmd-pill">/python o que são listas?</span>
+                    <span class="cmd-pill">/visualizacao-sql explique GROUP BY</span>
+                    <span class="cmd-pill">Por que aprender Python?</span>
+                    <span class="cmd-pill">/projeto-bloco integrar Python e SQL</span>
+                    <span class="cmd-pill">/content diferença ML e DL</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="input-area">
+            <div class="silo-pill" id="silo-pill" hidden aria-live="polite"></div>
+            <div class="input-hint">
+                <span>Enter</span> envia · <span>Shift+Enter</span> nova linha ·
+                <span>/python</span> · <span>/visualizacao-sql</span> · <span>/projeto-bloco</span> ·
+                <span>/planejamento-curso-carreira</span> · <span>/doc</span> · <span>/content</span>
+                · <span>/reload</span> para reconstruir o índice
+            </div>
+            <div class="input-row">
+                <textarea id="message-input" rows="1" placeholder="Digite sua mensagem..." autocomplete="off"
+                    aria-label="Campo de mensagem"></textarea>
+                <button id="send-button" aria-label="Enviar mensagem" title="Enviar">
+                    ➤
+                </button>
+            </div>
+        </footer>
+
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
